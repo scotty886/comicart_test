@@ -31,7 +31,8 @@ SECRET_KEY = 'django-insecure-l=46o2!qvj!h(ae-dxpvctbnvj*6^nojsy@k_v068z6i7=651c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['comicarttest-production.up.railway.app', 'https://comicarttest-production.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://comicarttest-production.up.railway.app/']
 
 
 # Application definition
@@ -106,7 +107,7 @@ DATABASES = {
 
     'USER': 'comicart',
 
-    'PASSWORD': os.environ.get('DB_PASSWORD'),
+    'PASSWORD': os.environ['DB_PASSWORD_TS'],
 
     'HOST': 'datatest031225.ctu4swos4g5v.us-east-2.rds.amazonaws.com',
 
@@ -209,8 +210,8 @@ LOGGING = {
 
 
 #####   AWS CONFIGURATION  #####
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
 AWS_STORAGE_BUCKET_NAME = "comicart"
 
